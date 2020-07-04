@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.Development.json" />
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
+    <ProjectReference Include="..\..\..\NetHacksPack.Hosting.Abstractions\NetHacksPack.Hosting.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\NetHacksPack.Hosting.Connections\NetHacksPack.Hosting.Connections.csproj" />
+    <ProjectReference Include="..\..\..\NetHacksPack.Hosting.Environment\NetHacksPack.Hosting.Environment.csproj" />
+    <ProjectReference Include="..\..\..\NetHacksPack.Hosting\NetHacksPack.Hosting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.event-bus.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

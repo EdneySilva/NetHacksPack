@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
+    <ProjectReference Include="..\NetHacksPack.Integration.Abstractions\NetHacksPack.Integration.Abstractions.csproj" />
+    <ProjectReference Include="..\NetHacksPack.Integration.RabbitMQ\NetHacksPack.Integration.RabbitMQ.csproj" />
+  </ItemGroup>
+
+</Project>

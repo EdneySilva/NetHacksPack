@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <!--<Project Sdk="Microsoft.NET.Sdk">-->
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <Version>1.0.0.1</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
+    <ProjectReference Include="..\NetHacksPack.Hosting.Abstractions\NetHacksPack.Hosting.Abstractions.csproj" />
+    <ProjectReference Include="..\NetHacksPack.Hosting.Environment\NetHacksPack.Hosting.Environment.csproj" />
+  </ItemGroup>
+
+</Project>

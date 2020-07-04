@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.4.0</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
+    <PackageReleaseNotes>Added constructors to handle properly events</PackageReleaseNotes>
+    <RepositoryUrl>https://localhost:44322/</RepositoryUrl>
+    <Copyright>Edney Batista da Silva M.E</Copyright>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  
+  <UsingTask TaskName="GetVersionParts" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <AssemblyPath ParameterType="System.String" Required="true" />
+      <MajorVersion ParameterType="System.Int32" Output="true" />
+      <MinorVersion ParameterType="System.Int32" Output="true" />
+      <BuildVersion ParameterType="System.Int32" Output="true" />
+      <RevisionVersion ParameterType="System.Int32" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System.Reflection" />
+      <Using Namespace="System.IO" />
+      <Code Type="Fragment" Language="cs">
+          <![CDATA[
+          if(File.Exists(this.AssemblyPath))
+          {
+            Version v = AssemblyName.GetAssemblyName(this.AssemblyPath).Version;
+
+            this.MajorVersion = v.Major;
+            this.MinorVersion = v.Minor;
+            this.BuildVersion = v.Build;    
+            this.RevisionVersion = v.Revision;
+          }
+      ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <GetVersionParts AssemblyPath="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="MajorVersion" PropertyName="MajorVersion" />
+      <Output TaskParameter="MinorVersion" PropertyName="MinorVersion" />
+      <Output TaskParameter="BuildVersion" PropertyName="BuildVersion" />
+      <Output TaskParameter="RevisionVersion" PropertyName="RevisionVersion" />
+    </GetVersionParts>
+    <!--<Exec Command="cd .\$(BaseOutputPath)$(Configuration)&#xD;&#xA;&#xD;&#xA;IF $(Configuration) == Release (&#xD;&#xA;  IF NOT EXIST $(AssemblyName).$(MajorVersion).$(MinorVersion).$(BuildVersion).$(RevisionVersion).nupkg  (&#xD;&#xA;    echo &quot;NAO EXISTE&quot;&#xD;&#xA;  ) else (&#xD;&#xA;    echo 'LOCK'&#xD;&#xA;  )&#xD;&#xA;)" />-->
+  </Target>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <GetVersionParts AssemblyPath="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="MajorVersion" PropertyName="MajorVersion" />
+      <Output TaskParameter="MinorVersion" PropertyName="MinorVersion" />
+      <Output TaskParameter="BuildVersion" PropertyName="BuildVersion" />
+      <Output TaskParameter="RevisionVersion" PropertyName="RevisionVersion" />
+    </GetVersionParts>
+    <!--<Exec Command="cd .\$(BaseOutputPath)$(Configuration)&#xD;&#xA;&#xD;&#xA;IF $(Configuration) == Release (&#xD;&#xA;  IF EXIST push-nuget.lock (&#xD;&#xA;    echo 'Push to nuget is LOCKED'&#xD;&#xA;  ) else (&#xD;&#xA;    IF EXIST $(AssemblyName).$(MajorVersion).$(MinorVersion).$(BuildVersion).$(RevisionVersion).nupkg  (&#xD;&#xA;      echo &quot;EXISTE&quot;&#xD;&#xA;    )&#xD;&#xA;  )&#xD;&#xA;)" />-->
+  </Target>
+</Project>

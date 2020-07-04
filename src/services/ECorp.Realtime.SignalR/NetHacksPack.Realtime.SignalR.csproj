@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings.event-bus.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="appsettings.event-bus.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ECorp.Core\ECorp.Core.csproj" />
+    <ProjectReference Include="..\..\ECorp.Hosting.Abstractions\ECorp.Hosting.Abstractions.csproj" />
+    <ProjectReference Include="..\..\ECorp.Hosting.Connections\ECorp.Hosting.Connections.csproj" />
+    <ProjectReference Include="..\..\ECorp.Hosting.Environment\ECorp.Hosting.Environment.csproj" />
+    <ProjectReference Include="..\..\ECorp.Hosting.Web.IIS\ECorp.Hosting.Web.IIS.csproj" />
+    <ProjectReference Include="..\..\ECorp.Hosting\ECorp.Hosting.csproj" />
+    <ProjectReference Include="..\..\ECorp.Integration.Abstractions\ECorp.Integration.Abstractions.csproj" />
+    <ProjectReference Include="..\..\ECorp.Integration.RabbitMQ\ECorp.Integration.RabbitMQ.csproj" />
+  </ItemGroup>
+
+</Project>
