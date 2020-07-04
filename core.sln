@@ -53,7 +53,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projetos", "projetos", "{46
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AC8B656A-ED96-457E-A1AF-92C420C9C68E}"
 	ProjectSection(SolutionItems) = preProject
-		README.txt = README.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Remote", "Remote", "{FD1E8378-46F6-4355-BFF6-28D62F7827C2}"
@@ -70,7 +70,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Events.Helper"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Integration.RabbitMQ.Handlers", "src\NetHacksPack.Integration.RabbitMQ.Handlers\NetHacksPack.Integration.RabbitMQ.Handlers.csproj", "{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste", "src\Templates\services\Teste\Teste.csproj", "{64C40CF0-DB48-427E-AA9C-71ED81FEE02E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste", "src\Templates\services\Teste\Teste.csproj", "{64C40CF0-DB48-427E-AA9C-71ED81FEE02E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
