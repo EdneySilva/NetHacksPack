@@ -19,55 +19,55 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
-      - run: dotnet build ./src/NetHacksPack.Core
+      - run: dotnet build ./src/NetHacksPack.Core --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Core
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Core/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Data.Persistence.Abstractions
+      - run: dotnet build ./src/NetHacksPack.Data.Persistence.Abstractions --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Data.Persistence.Abstractions
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Data.Persistence.Abstractions/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Data.Persistence.EF
+      - run: dotnet build ./src/NetHacksPack.Data.Persistence.EF --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Data.Persistence.EF
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Data.Persistence.EF/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Hosting.Abstractions
+      - run: dotnet build ./src/NetHacksPack.Hosting.Abstractions --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Hosting.Abstractions
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Hosting.Abstractions/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Hosting
+      - run: dotnet build ./src/NetHacksPack.Hosting --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Hosting
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Hosting/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Hosting.Environment
+      - run: dotnet build ./src/NetHacksPack.Hosting.Environment --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Hosting.Environment
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Hosting.Environment/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Hosting.Connections
+      - run: dotnet build ./src/NetHacksPack.Hosting.Connections --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Hosting.Connections
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Hosting.Connections/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Hosting.Listener
+      - run: dotnet build ./src/NetHacksPack.Hosting.Listener --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Hosting.Listener
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Hosting.Listener/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
 
-      - run: dotnet build ./src/NetHacksPack.Hosting.Web.IIS
+      - run: dotnet build ./src/NetHacksPack.Hosting.Web.IIS --configuration Release
       - name: Create the package Application
         run: dotnet pack -c Release ./src/NetHacksPack.Hosting.Web.IIS
       - name: Publish the package to GPR
