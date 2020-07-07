@@ -16,8 +16,8 @@ jobs:
         with: 
           dotnet-version: "3.1.100" # SDK Version to use.
           source-url: https://api.nuget.org/v3/index.json
-        #env:
-        #  NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
       - run: dotnet build ./src/NetHacksPack.Core
       - name: Create the package Application
