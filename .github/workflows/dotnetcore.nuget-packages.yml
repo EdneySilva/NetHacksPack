@@ -72,3 +72,21 @@ jobs:
         run: dotnet pack -c Release ./src/NetHacksPack.Hosting.Web.IIS
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Hosting.Web.IIS/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Integration.Abstractions --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Integration.Abstractions
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Integration.Abstractions/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Integration.RabbitMQ --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Integration.RabbitMQ
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Integration.RabbitMQ/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Integration.RabbitMQ.Handlers --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Integration.RabbitMQ.Handlers
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Integration.RabbitMQ.Handlers/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
