@@ -28,7 +28,7 @@ namespace Template.BackgroundHost.DependecyInjection
             {
                 rabbitPipeline.ConfigureEvent<Events.UserCreated>((options) =>
                 {
-                    //options.Use(handler);
+                    options.Use(handler);
                 });
             });
 

@@ -4,6 +4,20 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl></RepositoryUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <Version>1.0.0.1</Version>
+    <PackageReleaseNotes>Added license + basic description</PackageReleaseNotes>
+    <Description>This project contain the abstractions to features that can be util in a host managment</Description>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
+    <Copyright>Edney Batista da Silva</Copyright>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

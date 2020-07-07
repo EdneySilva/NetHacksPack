@@ -3,7 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0.4</Version>
+    <Version>1.0.0.5</Version>
+    <PackageReleaseNotes>Added + basic descriptions</PackageReleaseNotes>
+    <Description>This package provides the implementation to startup a listener client application, that receive and handle events from EventBus</Description>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
+    <Copyright>Edney Batista da Silva</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +19,13 @@
   <ItemGroup>
     <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
     <ProjectReference Include="..\NetHacksPack.Integration.Abstractions\NetHacksPack.Integration.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

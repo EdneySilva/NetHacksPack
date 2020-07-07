@@ -10,12 +10,23 @@
   </PropertyGroup>
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.2</Version>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <PackageReleaseNotes>Added licenses + basic description</PackageReleaseNotes>
+    <Description>This package provides a basic infrastructure already configured to start a web application based on IIS, with the necessary configuration applied</Description>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
+    <Copyright>Edney Batista da Silva</Copyright>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
     <ProjectReference Include="..\NetHacksPack.Hosting.Abstractions\NetHacksPack.Hosting.Abstractions.csproj" />
     <ProjectReference Include="..\NetHacksPack.Hosting.Environment\NetHacksPack.Hosting.Environment.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

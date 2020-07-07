@@ -3,6 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0.1</Version>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <PackageReleaseNotes>Added license + basic description</PackageReleaseNotes>
+    <Description>This package implements a generic repository from NetHacksPack.Data.Persistence.Abstraction based on EntityFrameworkCore.
+
+It helps write entity framework repositories easily, without creating explicity dependencies from a EFCore implementation</Description>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
+    <Copyright>Edney Batista da Silva</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +22,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetHacksPack.Data.Persistence.Abstractions\NetHacksPack.Data.Persistence.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

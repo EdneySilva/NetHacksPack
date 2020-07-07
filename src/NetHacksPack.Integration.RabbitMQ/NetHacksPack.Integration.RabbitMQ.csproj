@@ -3,7 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0</Version>
+    <Version>2.0.0.1</Version>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <PackageReleaseNotes>Added license  + basic description</PackageReleaseNotes>
+    <Description>This package contains an implementation from NetHacksPack.Integration.Abstrations based on RabbitMQ Client.
+
+It helps applications listen and publish messages throughout an EventBus based on RabbitMQ.
+
+Some parts of the implementation on this package can be easily replaced, and a specific behaviours can be set</Description>
+    <Copyright>Edney Batista da Silva</Copyright>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +27,13 @@
     <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
     <ProjectReference Include="..\NetHacksPack.Hosting.Abstractions\NetHacksPack.Hosting.Abstractions.csproj" />
     <ProjectReference Include="..\NetHacksPack.Integration.Abstractions\NetHacksPack.Integration.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

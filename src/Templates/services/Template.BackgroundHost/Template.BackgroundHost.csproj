@@ -24,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="nethackspack.core" Version="1.0.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
     <ProjectReference Include="..\..\..\NetHacksPack.Hosting.Abstractions\NetHacksPack.Hosting.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\NetHacksPack.Hosting.Connections\NetHacksPack.Hosting.Connections.csproj" />

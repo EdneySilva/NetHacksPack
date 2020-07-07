@@ -5,8 +5,15 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
-    <PackageReleaseNotes>Add core package</PackageReleaseNotes>
+    <Version>1.0.1.1</Version>
+    <PackageReleaseNotes>Added license + basic description</PackageReleaseNotes>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <Description>This package contains the abstraction definition for an EventBus.
+
+It helps to write an infrastructure integration between application without accouple with an a specific technology</Description>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
+    <Copyright>Edney Batista da Silva</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +22,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

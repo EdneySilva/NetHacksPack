@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <PackageReleaseNotes>Added licenses + basic descriptions</PackageReleaseNotes>
+    <Description>This package provides a easily way to start host services, configure the minimus necessary for the host</Description>
+    <Version>1.0.0.1</Version>
+    <Copyright>Edney Batista da Silva</Copyright>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +18,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetHacksPack.Hosting.Abstractions\NetHacksPack.Hosting.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

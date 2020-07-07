@@ -4,7 +4,7 @@ A smart set of common classes and implementations distrubuted as little packages
 
 ### Why HacksPack?
 - .NET HacksPack is being developed in a way to transform it self and your project in a structured "Plugable application", where you can detach any party from HacksPack/project and replace it by a custom implementation, or another .NET HacksPack that provide the desiered tools.
-- Yes you read correctly, as I sad you can also replace part of the .NET HacksPack implemantation. It is helpfull when part of the solution is not satisfing your project's goals but you want implement the inteire comunication with a queue e.g
+- Yes you read correctly, as I sad you can also replace part of the .NET HacksPack implemantation. It is helpfull when part of the solution is not satisfing your project's goals but you wont implement the inteire comunication with a queue e.g
 - And as a "Plugable Application" you can change your backstage without any impact for you business logic. "Hack" your project ;D changing the .NET HacksPack implementation.
 
 ## Give a Star! :star:
@@ -28,7 +28,7 @@ dotnet add package NetHacksPack.Core
 
 ### .NET NetHacksPack.Hosting.Abstractions
 ---
-Will be available soon
+dotnet add package NetHacksPack.Hosting.Abstractions
 ```
 n/a
 ```
@@ -36,12 +36,12 @@ n/a
 
 | Package |  Version | Popularity |
 | ------- | ----- | ----- |
-| n/a| n/a| n/a|
+| `NetHacksPack.Core` | [![NuGet](https://img.shields.io/nuget/v/NetHacksPack.Hosting.Abstractions.svg)](https://nuget.org/packages/NetHacksPack.) | [![Nuget](https://img.shields.io/nuget/dt/NetHacksPack.Hosting.Abstractions.svg)](https://nuget.org/packages/NetHacksPack.Hosting.Abstractions.svg) |
 
 
 ### .NET NetHacksPack.Hosting
 ---
-Will be available soon
+dotnet add package NetHacksPack.Hosting
 ```
 n/a
 ```
@@ -49,7 +49,7 @@ n/a
 
 | Package |  Version | Popularity |
 | ------- | ----- | ----- |
-| n/a| n/a| n/a|
+| `NetHacksPack.Core` | [![NuGet](https://img.shields.io/nuget/v/NetHacksPack.Hosting.Abstractions.svg)](https://nuget.org/packages/NetHacksPack.Core) | [![Nuget](https://img.shields.io/nuget/dt/NetHacksPack.Hosting.svg)](https://nuget.org/packages/NetHacksPack.Hosting.svg) |
 
 
 ### .NET NetHacksPack.Hosting.Connections

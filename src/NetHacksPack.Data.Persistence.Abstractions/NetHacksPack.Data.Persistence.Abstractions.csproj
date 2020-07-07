@@ -3,6 +3,21 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0.1</Version>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Edney Batista da Silva</Copyright>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <PackageReleaseNotes>Added license file + basic descriptions</PackageReleaseNotes>
+    <Description>This package contains the basic repository abstractions, to NetHacksPack.
+It helps to write plugable infrastruture storage projects being mokes and replaces data provides easely</Description>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

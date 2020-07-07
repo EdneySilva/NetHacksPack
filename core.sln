@@ -70,8 +70,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Events.Helper"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Integration.RabbitMQ.Handlers", "src\NetHacksPack.Integration.RabbitMQ.Handlers\NetHacksPack.Integration.RabbitMQ.Handlers.csproj", "{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste", "src\Templates\services\Teste\Teste.csproj", "{64C40CF0-DB48-427E-AA9C-71ED81FEE02E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -150,10 +148,6 @@ Global
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64C40CF0-DB48-427E-AA9C-71ED81FEE02E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64C40CF0-DB48-427E-AA9C-71ED81FEE02E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64C40CF0-DB48-427E-AA9C-71ED81FEE02E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64C40CF0-DB48-427E-AA9C-71ED81FEE02E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,7 +183,6 @@ Global
 		{AC111D9A-CABE-4DA1-BCD7-501C1B207944} = {FD1E8378-46F6-4355-BFF6-28D62F7827C2}
 		{26BB3E39-B0A8-43CC-8704-20BB595D4244} = {D69F1607-E425-4B8C-AE84-E9C703168955}
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96} = {C3A77404-2212-4767-8AED-0DF05EAB17EA}
-		{64C40CF0-DB48-427E-AA9C-71ED81FEE02E} = {5AED5549-A939-4202-83C9-2483E2A989AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DFFE86AD-D078-4C1A-85F2-4C053F66D6A7}
