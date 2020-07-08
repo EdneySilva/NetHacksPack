@@ -28,9 +28,9 @@ dotnet add package NetHacksPack.Core
 
 ### .NET NetHacksPack.Hosting.Abstractions
 ---
-dotnet add package NetHacksPack.Hosting.Abstractions
-```
 n/a
+```
+dotnet add package NetHacksPack.Hosting.Abstractions
 ```
 ---
 
@@ -41,9 +41,9 @@ n/a
 
 ### .NET NetHacksPack.Hosting
 ---
-dotnet add package NetHacksPack.Hosting
-```
 n/a
+```
+dotnet add package NetHacksPack.Hosting
 ```
 ---
 
@@ -54,9 +54,9 @@ n/a
 
 ### .NET NetHacksPack.Hosting.Connections
 ---
-dotnet add package NetHacksPack.Hosting.Connections
-```
 n/a
+```
+dotnet add package NetHacksPack.Hosting.Connections
 ```
 ---
 
@@ -67,9 +67,9 @@ n/a
 
 ### .NET NetHacksPack.Hosting.Environment
 ---
-dotnet add package NetHacksPack.Hosting.Environment
-```
 n/a
+```
+dotnet add package NetHacksPack.Hosting.Environment
 ```
 ---
 
@@ -80,9 +80,9 @@ n/a
 
 ### .NET NetHacksPack.Hosting.Listener
 ---
-dotnet add package NetHacksPack.Hosting.Listener
-```
 n/a
+```
+dotnet add package NetHacksPack.Hosting.Listener
 ```
 ---
 
@@ -93,9 +93,9 @@ n/a
 
 ### .NET NetHacksPack.Hosting.Web.IIS
 ---
-dotnet add package NetHacksPack.Hosting.Web.IIS
-```
 n/a
+```
+dotnet add package NetHacksPack.Hosting.Web.IIS
 ```
 ---
 
@@ -106,9 +106,9 @@ n/a
 
 ### .NET NetHacksPack.Integration.Abstractions
 ---
-dotnet add package NetHacksPack.Integration.Abstractions
-```
 n/a
+```
+dotnet add package NetHacksPack.Integration.Abstractions
 ```
 ---
 
@@ -119,9 +119,9 @@ n/a
 
 ### .NET NetHacksPack.Integration.RabbitMQ
 ---
-dotnet add package NetHacksPack.Integration.RabbitMQ
-```
 n/a
+```
+dotnet add package NetHacksPack.Integration.RabbitMQ
 ```
 ---
 
@@ -132,9 +132,9 @@ n/a
 
 ### .NET NetHacksPack.Integration.RabbitMQ.Handlers
 ---
-dotnet add package NetHacksPack.Integration.RabbitMQ.Handlers
-```
 n/a
+```
+dotnet add package NetHacksPack.Integration.RabbitMQ.Handlers
 ```
 ---
 
@@ -145,9 +145,9 @@ n/a
 
 ### .NET NetHacksPack.Data.Persistence.Abstractions
 ---
-dotnet add package NetHacksPack.Data.Persistence.Abstractions
-```
 n/a
+```
+dotnet add package NetHacksPack.Data.Persistence.Abstractions
 ```
 ---
 
@@ -158,9 +158,9 @@ n/a
 
 ### .NET NetHacksPack.Data.Persistence.EF
 ---
-dotnet add package NetHacksPack.Data.Persistence.EF
-```
 n/a
+```
+dotnet add package NetHacksPack.Data.Persistence.EF
 ```
 ---
 
