@@ -30,7 +30,7 @@ dotnet add package NetHacksPack.Core
 ---
 This package contains definitions for abstractions that can be usefull to create background hosts (also know as windows|linux - services).
 
-See the [oficial documentation](https://github.com/EdneySilva/NetHacksPack/tree/master/src/NetHacksPack.Hosting.Abstractions/README.md)
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting.Abstractions/README.md)
 ```
 dotnet add package NetHacksPack.Hosting.Abstractions
 ```
