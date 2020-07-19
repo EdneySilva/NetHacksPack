@@ -4,11 +4,11 @@ This package helps you to handle properly Environment variables parse the stored
 
 ### Why use NetHacksPack.Hosting
 ---
-Istead of try to parse environment variables and concerns about null values, serializing error or notfound variables, you can just call a method that will do the hard work for you
+Istead of try to parse environment variables and concerns about null values, serialization error or not found variables, you can just call a method that will do the hard work for you
 
 #### How to use
 ---
-It's very simple to use it
+It's very simple to use itIstead of try to parse environment variables and concerns about null values, serializing error or notfound variables, you can just call a method that will do the hard work for you
 
 ```c#
 using NetHacksPack.Hosting.Environment;
@@ -64,6 +64,7 @@ long ticks = "MyEnvironmentTicksVariableName".GetLong(throwExceptionIfNotFoundOr
 ```
 ### Boolean types
 ---
+
 A little trick is that boolean values can be deserialized by some string patterns:
 
 ```c#
@@ -128,6 +129,7 @@ Console.WriteLine(isProduction);
 
 ### Complex objects
 ---
+
 This packages also allow you to get complex objects from the environment variables
 
 ```c#
