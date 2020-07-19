@@ -58,7 +58,9 @@ dotnet add package NetHacksPack.Hosting
 
 ### .NET NetHacksPack.Hosting.Connections
 ---
-n/a
+This package is a stantard implementation from the package .NetHacksPack.Hosting.Abstractionos that provides a IConnectionProvider implementation, help you get connection information
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting.Connections/README.md)
 ```
 dotnet add package NetHacksPack.Hosting.Connections
 ```

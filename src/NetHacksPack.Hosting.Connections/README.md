@@ -1,4 +1,4 @@
-﻿NetHacksPack.Hosting.Connection;
+﻿NetHacksPack.Hosting.Connection
 =====================
 This package contains the implementation from the package NetHacksPack.Hosting.Abstraction, providing you an implementation for **IConnectionStringProvider**.
 
