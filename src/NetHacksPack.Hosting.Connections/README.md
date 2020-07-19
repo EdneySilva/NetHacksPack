@@ -17,16 +17,16 @@ Create services that require a connection provide
 // create a dependency injector to inject in your container the resolver for your connection
 namespace MyDependencyInjectionNamespace
 {
-    public static class MyDependencyInjector
-    {
-        public static IServiceCollection AddMyDbService(IServiceCollection services, Func<IConnectionStringProvider, string> myConnectionProvider)
-        {
-            services.AddSingleton(myConnectionProvider);
-            // you can change your service life as you wish according your application
-            services.AddScoped<IMyDatabaseService, MyDatabaseService>();
-            return services;
-	    }
-    }
+  public static class MyDependencyInjector
+  {
+   public static IServiceCollection AddMyDbService(IServiceCollection services, Func<IConnectionStringProvider, string> myConnectionProvider)
+   {
+     services.AddSingleton(myConnectionProvider);
+     // you can change your service life as you wish according your application
+     services.AddScoped<IMyDatabaseService, MyDatabaseService>();
+     return services;
+   }
+ }
 }
 // create a service that needs a connection string
 
