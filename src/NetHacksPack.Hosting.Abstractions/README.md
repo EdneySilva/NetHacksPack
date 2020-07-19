@@ -31,6 +31,10 @@ public class MyConnectorOptions
 }
 IConnectionStringProvider myConnectionProvider = ...
 var myConnector = myConnectionProvider.GetConnectorOptions<MyConnectorOptions>("myConnectionKey");
+
+var myDatabaseConnection = new MyDatabaseConnection(myConnector.Server, myConnector.User, myConnector.Password);
+myDatabaseConnection.Port = myConnector.Port;
+
 ```
 
 ### Constants
