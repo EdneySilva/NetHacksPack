@@ -28,33 +28,33 @@ namespace MyDependencyInjectionNamespace
     }
   }
 }
-// create a service that needs a connection string
 
+// create a service that needs a connection string
 namespace MyServiceNamespace
 {
-    public interface IMyDatabaseService
+  public interface IMyDatabaseService
+  {
+    void ExecuteQuery(string query);
+  }
+
+  class MyDatabaseService : IMyDatabaseService
+  {
+    private readonly Func<IConnectionStringProvider, string> myConnectionProvider;
+    private readonly IConnectionStringProvider connectionProvider;
+
+    public MyDatabaseService(IConnectionStringProvider connectionProvider, Func<IConnectionStringProvider, string> myConnectionProvider)
     {
-        void ExecuteQuery(string query);
-    }
+        this.myConnectionProvider = myConnectionProvider;
+        this.connectionProvider = connectionProvider;
+	 }
 
-    class MyDatabaseService : IMyDatabaseService
+    public void ExecuteQuery(string query)
     {
-        private readonly Func<IConnectionStringProvider, string> myConnectionProvider;
-        private readonly IConnectionStringProvider connectionProvider;
-
-        public MyDatabaseService(IConnectionStringProvider connectionProvider, Func<IConnectionStringProvider, string> myConnectionProvider)
-        {
-            this.myConnectionProvider = myConnectionProvider;
-            this.connectionProvider = connectionProvider;
-	    }
-
-        public void ExecuteQuery(string query)
-        {
-            var myConnection = System.Data.SqlClient.SqlConnection(this.myConnectionProvider(this.connectionProvider));
-            myConnection.Open();
-            // do something ...
-	    }
-    }
+        var myConnection = System.Data.SqlClient.SqlConnection(this.myConnectionProvider(this.connectionProvider));
+        myConnection.Open();
+        // do something ...
+	 }
+  }
 }
 
 ```
