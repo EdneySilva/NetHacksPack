@@ -43,7 +43,9 @@ dotnet add package NetHacksPack.Hosting.Abstractions
 
 ### .NET NetHacksPack.Hosting
 ---
-n/a
+This package is a stantard implementation from the package .NetHacksPack.Hosting.Abstractionos to help build a standart host application
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting/README.md)
 ```
 dotnet add package NetHacksPack.Hosting
 ```
