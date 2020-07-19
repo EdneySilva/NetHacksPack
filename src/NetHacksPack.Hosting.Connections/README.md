@@ -39,21 +39,21 @@ namespace MyServiceNamespace
     
     class MyDatabaseService : IMyDatabaseService
     {
-         private readonly Func<IConnectionStringProvider, string> myConnectionProvider;
-         private readonly IConnectionStringProvider connectionProvider;
-         
-         public MyDatabaseService(IConnectionStringProvider connectionProvider, Func<IConnectionStringProvider, string> myConnectionProvider)
-         {
-             this.myConnectionProvider = myConnectionProvider;
-             this.connectionProvider = connectionProvider;
-	     }
-         
-         public void ExecuteQuery(string query)
-         {
-             var myConnection = System.Data.SqlClient.SqlConnection(this.myConnectionProvider(this.connectionProvider));
-             myConnection.Open();
-             // do something ...
-	     }
+        private readonly Func<IConnectionStringProvider, string> myConnectionProvider;
+        private readonly IConnectionStringProvider connectionProvider;
+        
+        public MyDatabaseService(IConnectionStringProvider connectionProvider, Func<IConnectionStringProvider, string> myConnectionProvider)
+        {
+            this.myConnectionProvider = myConnectionProvider;
+            this.connectionProvider = connectionProvider;
+        }
+        
+        public void ExecuteQuery(string query)
+        {
+            var myConnection = System.Data.SqlClient.SqlConnection(this.myConnectionProvider(this.connectionProvider));
+            myConnection.Open();
+            // do something ...
+        }
     }
 }
 
