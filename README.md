@@ -73,7 +73,8 @@ dotnet add package NetHacksPack.Hosting.Connections
 
 ### .NET NetHacksPack.Hosting.Environment
 ---
-n/a
+This package is a standard implementation from helpers that are usefull to handle environment variable values, with that developers can store and retrieve values from this variables and use through the application
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting.Environment/README.md)
 ```
 dotnet add package NetHacksPack.Hosting.Environment
 ```
