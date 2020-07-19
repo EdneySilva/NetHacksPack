@@ -19,14 +19,14 @@ namespace MyDependencyInjectionNamespace
 {
   public static class MyDependencyInjector
   {
-   public static IServiceCollection AddMyDbService(IServiceCollection services, Func<IConnectionStringProvider, string> myConnectionProvider)
-   {
-     services.AddSingleton(myConnectionProvider);
-     // you can change your service life as you wish according your application
-     services.AddScoped<IMyDatabaseService, MyDatabaseService>();
-     return services;
-   }
- }
+    public static IServiceCollection AddMyDbService(IServiceCollection services, Func<IConnectionStringProvider, string> myConnectionProvider)
+    {
+      services.AddSingleton(myConnectionProvider);
+      // you can change your service life as you wish according your application
+      services.AddScoped<IMyDatabaseService, MyDatabaseService>();
+      return services;
+    }
+  }
 }
 // create a service that needs a connection string
 
