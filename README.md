@@ -28,7 +28,9 @@ dotnet add package NetHacksPack.Core
 
 ### .NET NetHacksPack.Hosting.Abstractions
 ---
-n/a
+This package contains definitions for abstractions that can be usefull to create background hosts (also know as windows|linux - services).
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting.Abstractions/README.md)
 ```
 dotnet add package NetHacksPack.Hosting.Abstractions
 ```
@@ -41,7 +43,9 @@ dotnet add package NetHacksPack.Hosting.Abstractions
 
 ### .NET NetHacksPack.Hosting
 ---
-n/a
+This package is a stantard implementation from the package .NetHacksPack.Hosting.Abstractionos to help build a standart host application
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting/README.md)
 ```
 dotnet add package NetHacksPack.Hosting
 ```
@@ -54,7 +58,9 @@ dotnet add package NetHacksPack.Hosting
 
 ### .NET NetHacksPack.Hosting.Connections
 ---
-n/a
+This package is a stantard implementation from the package .NetHacksPack.Hosting.Abstractionos that provides a IConnectionProvider implementation, help you get connection information
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting.Connections/README.md)
 ```
 dotnet add package NetHacksPack.Hosting.Connections
 ```
