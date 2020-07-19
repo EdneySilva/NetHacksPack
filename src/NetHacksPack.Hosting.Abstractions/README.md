@@ -57,15 +57,15 @@ public const string APPSETTINGS_JSON = "appsettings.json";
 // the name from the default application setting file based on the environment the applicatin is running replaced on {0}
 public const string APPSETTINGS_ENV_JSON = "appsettings.{0}.json";
 
-// the name from a application setting file to store data to database
+// the name from a application setting file to store configurations for database
 public const string APPSETTINGS_DATABASE_JSON = "appsettings.database.json";
 
-// the name from a application setting file to store data to eventbus
+// the name from a application setting file to store configurations for eventbus
 public const string APPSETTINGS_EVENT_BUS_JSON = "appsettings.event-bus.json";
 
-// the name from a application setting file to store data to log
+// the name from a application setting file to store configurations for log
 public const string APPSETTINGS_LOG_JSON = "appsettings.log.json";
 
-// the name from a application setting file to store data to cache
+// the name from a application setting file to store configurations for cache
 public const string APPSETTINGS_CACHE_JSON = "appsettings.cache.json";
 ```
