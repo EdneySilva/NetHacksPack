@@ -1,8 +1,8 @@
 name: .NET Core - Packages Nuget
 
 on: 
-  push:
-    branches:
+  pull_request:
+    branches: 
       - master
 
 jobs:
