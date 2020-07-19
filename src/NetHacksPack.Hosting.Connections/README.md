@@ -17,44 +17,44 @@ Create services that require a connection provide
 // create a dependency injector to inject in your container the resolver for your connection
 namespace MyDependencyInjectionNamespace
 {
-  public static class MyDependencyInjector
-  {
-    public static IServiceCollection AddMyDbService(IServiceCollection services, Func<IConnectionStringProvider, string> myConnectionProvider)
+    public static class MyDependencyInjector
     {
-      services.AddSingleton(myConnectionProvider);
-      // you can change your service life as you wish according your application
-      services.AddScoped<IMyDatabaseService, MyDatabaseService>();
-      return services;
+        public static IServiceCollection AddMyDbService(IServiceCollection services, Func<IConnectionStringProvider, string> myConnectionProvider)
+        {
+            services.AddSingleton(myConnectionProvider);
+            // you can change your service life as you wish according your application
+            services.AddScoped<IMyDatabaseService, MyDatabaseService>();
+            return services;
+        }
     }
-  }
 }
 
 // create a service that needs a connection string
 namespace MyServiceNamespace
 {
-  public interface IMyDatabaseService
-  {
-    void ExecuteQuery(string query);
-  }
-
-  class MyDatabaseService : IMyDatabaseService
-  {
-    private readonly Func<IConnectionStringProvider, string> myConnectionProvider;
-    private readonly IConnectionStringProvider connectionProvider;
-
-    public MyDatabaseService(IConnectionStringProvider connectionProvider, Func<IConnectionStringProvider, string> myConnectionProvider)
+    public interface IMyDatabaseService
     {
-        this.myConnectionProvider = myConnectionProvider;
-        this.connectionProvider = connectionProvider;
-	 }
-
-    public void ExecuteQuery(string query)
+        void ExecuteQuery(string query);
+    }
+    
+    class MyDatabaseService : IMyDatabaseService
     {
-        var myConnection = System.Data.SqlClient.SqlConnection(this.myConnectionProvider(this.connectionProvider));
-        myConnection.Open();
-        // do something ...
-	 }
-  }
+         private readonly Func<IConnectionStringProvider, string> myConnectionProvider;
+         private readonly IConnectionStringProvider connectionProvider;
+         
+         public MyDatabaseService(IConnectionStringProvider connectionProvider, Func<IConnectionStringProvider, string> myConnectionProvider)
+         {
+             this.myConnectionProvider = myConnectionProvider;
+             this.connectionProvider = connectionProvider;
+	     }
+         
+         public void ExecuteQuery(string query)
+         {
+             var myConnection = System.Data.SqlClient.SqlConnection(this.myConnectionProvider(this.connectionProvider));
+             myConnection.Open();
+             // do something ...
+	     }
+    }
 }
 
 ```
@@ -66,15 +66,15 @@ using MyDependencyInjectionNamespace;
 
 namespace MyNamespaceApp
 {
-    class Startup
-    {
-        public void Configure(IServiceCollection services)
-        {
-            services.AddConnectionProvider();
-
-            services.AddMyDbService((connectionProvider) => connectionProvider.GetConnectionString("myDbConnectionKey"));
-        }
-    }
+   class Startup
+   {
+       public void Configure(IServiceCollection services)
+       {
+           services.AddConnectionProvider();
+           
+           services.AddMyDbService((connectionProvider) => connectionProvider.GetConnectionString("myDbConnectionKey"));
+       }
+   }
 }
 
 ```
@@ -90,17 +90,17 @@ namespace MyNamespaceApp.Controllers
 {
     public class MyController : Controller
     {
-        private readonly IMyDatabaseService myDbService;
-
-        public MyController(IMyDatabaseService myDbService)
-        {
-            this.myDbService = myDbService;
-		}
-
-        public IActionResult Index(IServiceCollection services)
-        {
-            this.myDbService.ExecuteQuery("INSERT INTO myTable(1, 'mydatavalue')");
-        }
+         private readonly IMyDatabaseService myDbService;
+         
+         public MyController(IMyDatabaseService myDbService)
+         {
+             this.myDbService = myDbService;
+         }
+         
+         public IActionResult Index(IServiceCollection services)
+         {
+             this.myDbService.ExecuteQuery("INSERT INTO myTable(1, 'mydatavalue')");
+         }
     }
 }
 
@@ -118,16 +118,15 @@ public class DbOptions
     public string Database { get; set; }
     public string User { get; set; }
     public string Password { get; set; }
-
+    
     public override string ToString()
     {
         return $"data source={this.Server}; initial catalog={this.database}; user={this.User}; password={this.Password}";
-	}
+    }
 }
 
 // As explained you just change the return type
 public static IServiceCollection AddMyDbService(IServiceCollection services, Func<IConnectionStringProvider, DbOptions> myConnectionProvider);
-
 
 class MyDatabaseService : IMyDatabaseService
 {
@@ -140,7 +139,7 @@ class MyDatabaseService : IMyDatabaseService
         var myConnection = System.Data.SqlClient.SqlConnection(myConnectionOption.ToString());
         myConnection.Open();
         // do something ...
-	}
+    }
 }
 
 // and to register
@@ -148,7 +147,7 @@ class MyDatabaseService : IMyDatabaseService
 public void Configure(IServiceCollection services)
 {
     services.AddConnectionProvider();
-
+    
     services.AddMyDbService((connectionProvider) => connectionProvider.GetConnectorOptions<DbOptions>("myDbConnectionKey"));
 }
 
