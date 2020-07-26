@@ -53,11 +53,7 @@
       "args": [
         "run",
         "--project",
-        "${workspaceFolder}/src/${input:project}",
-        "--launch-profile",
-        "${input:project}",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
+        "${workspaceFolder}/src/Templates/services/${input:sample_project}"
       ],
       "problemMatcher": "$msCompile",
       "presentation": {
@@ -72,11 +68,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/src/${input:project}",
-        "--output",
-        "${input:publish_output}",
-        "/property:GenerateFullPaths=true",
-        "/consoleloggerparameters:NoSummary"
+        "${workspaceFolder}/src/Templates/services/${input:sample_project}"
       ],
       "problemMatcher": "$msCompile",
       "presentation": {
@@ -92,7 +84,7 @@
       "args": [
         "watch",
         "--project",
-        "${workspaceFolder}/src/${input:project}",
+        "${workspaceFolder}/src/Templates/services/${input:sample_project}",
         "run"
       ],
       "problemMatcher": "$msCompile",
@@ -101,6 +93,15 @@
         "panel": "dedicated",
         "clear": true
       }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "sample_project",
+      "type": "pickString",
+      "options": ["Template.BackgroundHost"],
+      "default": "Template.BackgroundHost",
+      "description": "Select the project that you would like to execute"
     }
   ]
 }
