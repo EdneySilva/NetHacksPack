@@ -4,7 +4,7 @@ This package is a standard implementation for a host that initializes Listeners 
 
 ### Why use NetHacksPack.Hosting.Listener
 ---
-Istead of concern about infrastructure and how handler errors about that, you can just configure what events your application will handler
+Instead of concern about infrastructure and how handler errors about that, you can just configure what events your application will handler
 
 #### How to use
 ---
