@@ -2,13 +2,13 @@
 =====================
 This package helps you to handle properly Environment variables parse the stored value to a CLR type and also to a complex type 
 
-### Why use NetHacksPack.Hosting
+### Why use NetHacksPack.Hosting.Environment
 ---
 Istead of try to parse environment variables and concerns about null values, serialization error or not found variables, you can just call a method that will do the hard work for you
 
 #### How to use
 ---
-It's very simple to use itIstead of try to parse environment variables and concerns about null values, serializing error or notfound variables, you can just call a method that will do the hard work for you
+It's very simple to use it, instead of try to parse environment variables and concerns about null values, serializing error or notfound variables, you can just call a method that will do the hard work for you
 
 ```c#
 using NetHacksPack.Hosting.Environment;

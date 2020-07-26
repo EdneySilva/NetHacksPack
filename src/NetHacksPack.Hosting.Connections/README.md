@@ -4,7 +4,7 @@ This package contains the implementation from the package NetHacksPack.Hosting.A
 
 The connection provider uses **IConfiguration** and the **Environment Variables** to provide the requested connection configuration.
 
-### Why use NetHacksPack.Hosting
+### Why use NetHacksPack.Hosting.Connection
 ---
 This package improve the developer time, giving an implementation to provide any kind of connection configuration, without concerns about where it comes from.
 
