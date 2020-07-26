@@ -152,7 +152,10 @@ dotnet add package NetHacksPack.Integration.RabbitMQ.Handlers
 
 ### .NET NetHacksPack.Data.Persistence.Abstractions
 ---
-n/a
+This package contains the abstractions to handle Repository pattern
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Data.Persistence.Abstractions/README.md)
+
 ```
 dotnet add package NetHacksPack.Data.Persistence.Abstractions
 ```
