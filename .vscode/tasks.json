@@ -1,0 +1,106 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dotnet: clean",
+      "command": "dotnet clean",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: build",
+      "command": "dotnet build",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      },
+      "dependsOn": ["dotnet: clean"]
+    },
+    {
+      "label": "dotnet: restore",
+      "command": "dotnet restore",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: test",
+      "command": "dotnet test",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: run",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/src/${input:project}",
+        "--launch-profile",
+        "${input:project}",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "new",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/src/${input:project}",
+        "--output",
+        "${input:publish_output}",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/src/${input:project}",
+        "run"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}
