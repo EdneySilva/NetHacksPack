@@ -3,10 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.4.3</Version>
-    <AssemblyVersion>1.0.4.3</AssemblyVersion>
-    <FileVersion>1.0.4.3</FileVersion>
-    <PackageReleaseNotes>Added license file</PackageReleaseNotes>
+    <Version>1.0.4.4</Version>
+    <AssemblyVersion>1.0.4.4</AssemblyVersion>
+    <FileVersion>1.0.4.4</FileVersion>
+    <PackageReleaseNotes>Added base methods to entity core</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/EdneySilva/NetHacksPack</RepositoryUrl>
     <Copyright>Edney Batista da Silva M.E</Copyright>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
