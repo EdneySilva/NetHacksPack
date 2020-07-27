@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="nethackspack.core" Version="1.0.4.2" />
+    <PackageReference Include="nethackspack.core" Version="1.0.4.3" />
   </ItemGroup>
 
   <ItemGroup>
