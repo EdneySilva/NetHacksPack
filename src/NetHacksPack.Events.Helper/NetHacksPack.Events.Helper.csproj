@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ECorp.Core" Version="1.0.1" />
+    <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
   </ItemGroup>
 
 </Project>
