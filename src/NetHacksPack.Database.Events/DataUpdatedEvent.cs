@@ -5,7 +5,7 @@ namespace NetHacksPack.Database.Events
 {
     public class DataUpdatedEvent<TData> : DataEventBase<TData>
     {
-        public DataUpdatedEvent(TData data, string type)
+        public DataUpdatedEvent(TData data)
             : base(data, EventTypes.UPDATE)
         {
         }
