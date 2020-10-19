@@ -20,7 +20,7 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
         , INotificationHandler<DataDeletedEvent<TrackedEntity>>
     {
         private readonly IIdentity userAcessor;
-        private readonly NetHacksPack.Database.Extension.EF.DbContext dbContext;
+        private readonly Microsoft.EntityFrameworkCore.DbContext dbContext;
         private readonly IEnumerable<IgnoredEntity> listaNegras;
 
         public string LogType { get; }
@@ -28,11 +28,11 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
         public LogEventHandler(
             UserProvider userAcessor, 
             IServiceProvider serviceProvider, 
-            NetHacksPack.Database.Extension.EF.DbContext dbContext, 
+            DbContextProvider dbContext, 
             IEnumerable<IgnoredEntity> listaNegras)
         {
             this.userAcessor = userAcessor(serviceProvider);
-            this.dbContext = dbContext;
+            this.dbContext = dbContext(serviceProvider);
             this.listaNegras = listaNegras;
             this.LogType = typeof(EventLog).Name;
         }

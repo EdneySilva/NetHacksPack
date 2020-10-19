@@ -31,9 +31,9 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
             services.AddSingleton(eventLogsConfigurationProvider);
             services.AddSingleton(blackList); 
             services.DisableAllLogOn<EventLog>();
-            services.AddScoped<DbContext>((serviceProvider) =>
+            services.AddScoped<DbContextProvider>((serviceProvider) =>
             {
-                return serviceProvider.GetService<TDbContext>();
+                return (service) => service.GetService<TDbContext>();
             });
             return new LoggerExtensionBuilder(services);
         }

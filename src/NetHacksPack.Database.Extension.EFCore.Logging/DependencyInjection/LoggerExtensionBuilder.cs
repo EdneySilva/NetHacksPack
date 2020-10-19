@@ -7,7 +7,7 @@ using System.Security.Principal;
 
 namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
 {
-    internal delegate DbContext DbContextProvider(IServiceProvider service);
+    public delegate DbContext DbContextProvider(IServiceProvider service);
 
     public delegate IIdentity UserProvider(IServiceProvider service);
 
@@ -18,12 +18,6 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
         internal LoggerExtensionBuilder(IServiceCollection services)
         {
             this.services = services;
-        }
-
-        public LoggerExtensionBuilder User(UserProvider userProvider)
-        {
-            this.services.AddSingleton(userProvider);
-            return this;
         }
 
         public LoggerExtensionBuilder UseLogsOnInsert()
