@@ -3,6 +3,7 @@ using NetHacksPack.Database.Events;
 using NetHacksPack.Database.Extension.EFCore.Logging.Configuration;
 using System.Collections.Generic;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
 {
@@ -21,7 +22,8 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
             return services;
         }
 
-        public static LoggerExtensionBuilder AddLoggingExtensionForEF(this IServiceCollection services, UserProvider userProvider, EventLogsConfigurationProvider eventLogsConfigurationProvider)
+        public static LoggerExtensionBuilder AddLoggingExtensionForEF<TDbContext>(this IServiceCollection services, UserProvider userProvider, EventLogsConfigurationProvider eventLogsConfigurationProvider)
+            where TDbContext : DbContext
         {
             var blackList = new List<IgnoredEntity>();
             services.AddScoped<IRequestHandler<ApplyConfigurationsToContextCommand, bool>, ContextConfigurationHandler>();
@@ -29,7 +31,10 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
             services.AddSingleton(eventLogsConfigurationProvider);
             services.AddSingleton(blackList); 
             services.DisableAllLogOn<EventLog>();
-
+            services.AddScoped<DbContext>((serviceProvider) =>
+            {
+                return serviceProvider.GetService<TDbContext>();
+            });
             return new LoggerExtensionBuilder(services);
         }
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection;
 using NetHacksPack.Database.Extensions.EFCore.Logging.PostgreSql.Configuration;
 
@@ -6,9 +7,10 @@ namespace NetHacksPack.Database.Extensions.EFCore.Logging.PostgreSql.DependencyI
 {
     public static class DatabaseInfrastructureDependenciesInjector
     {
-        public static LoggerExtensionBuilder AddLoggingExtensionForEFPostgreSql(this IServiceCollection services, UserProvider userProvider)
+        public static LoggerExtensionBuilder AddLoggingExtensionForEFPostgreSql<TDbContext>(this IServiceCollection services, UserProvider userProvider)
+            where TDbContext : DbContext
         {
-            return services.AddLoggingExtensionForEF(userProvider, (services) =>
+            return services.AddLoggingExtensionForEF<TDbContext>(userProvider, (services) =>
             {
                 return new PostgreSqlEventLogConfiguration();
             });

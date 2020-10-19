@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NetHacksPack.Database.Events;
 using System;
@@ -6,7 +7,10 @@ using System.Security.Principal;
 
 namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
 {
+    internal delegate DbContext DbContextProvider(IServiceProvider service);
+
     public delegate IIdentity UserProvider(IServiceProvider service);
+
     public class LoggerExtensionBuilder
     {
         private readonly IServiceCollection services;
