@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using NetHacksPack.Core;
 using NetHacksPack.Core.Extensions.Events;
@@ -16,7 +17,19 @@ namespace NetHacksPack.Database.Extension.EF
         private readonly IMediatorHandler mediatorHandler;
         private readonly IServiceProvider serviceProvider;
 
+        public DbContext()
+        {
+
+        }
+
         public DbContext(IMediatorHandler mediatorHandler, IServiceProvider serviceProvider)
+        {
+            this.mediatorHandler = mediatorHandler;
+            this.serviceProvider = serviceProvider;
+        }
+
+        public DbContext(IMediatorHandler mediatorHandler, IServiceProvider serviceProvider, DbContextOptions dbContextOptions)
+            : base(dbContextOptions)
         {
             this.mediatorHandler = mediatorHandler;
             this.serviceProvider = serviceProvider;
@@ -60,25 +73,15 @@ namespace NetHacksPack.Database.Extension.EF
         {
             var entries = this.ChangeTracker.Entries();
             List<ObjectEvent> events = new List<ObjectEvent>(entries.Count());
-            if (entries.Any(item => item.State == EntityState.Added))
-                events.Add(
-                    new DataAddedEvent<TrackedEntity>(
-                        new TrackedEntity(
-                            entries.Where(w => w.State == EntityState.Added).ToArray()
-                    )));
-            if (entries.Any(item => item.State == EntityState.Modified))
-                events.Add(
-                    new DataUpdatedEvent<TrackedEntity>(
-                        new TrackedEntity(
-                            entries.Where(w => w.State == EntityState.Modified).ToArray()
-                        )));
-            if (entries.Any(item => item.State == EntityState.Deleted))
-                events.Add(
-                    new DataDeletedEvent<TrackedEntity>(
-                        new TrackedEntity(
-                            entries.Where(w => w.State == EntityState.Deleted).ToArray()
-                        )));
-
+            foreach (var item in entries.GroupBy(g => g.State))
+            {
+                if(item.Key == EntityState.Added)
+                    events.Add(new DataAddedEvent<TrackedEntity>(new TrackedEntity(item.ToList())));
+                else if (item.Key == EntityState.Deleted)
+                    events.Add(new DataDeletedEvent<TrackedEntity>(new TrackedEntity(item.ToList())));
+                else if (item.Key == EntityState.Modified)
+                    events.Add(new DataUpdatedEvent<TrackedEntity>(new TrackedEntity(item.ToList())));
+            }
             return events;
         }
     }
