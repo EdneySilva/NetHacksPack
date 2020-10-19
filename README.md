@@ -73,7 +73,8 @@ dotnet add package NetHacksPack.Hosting.Connections
 
 ### .NET NetHacksPack.Hosting.Environment
 ---
-n/a
+This package is a standard implementation from helpers that are usefull to handle environment variable values, with that developers can store and retrieve values from this variables and use through the application
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Hosting.Environment/README.md)
 ```
 dotnet add package NetHacksPack.Hosting.Environment
 ```
@@ -151,7 +152,10 @@ dotnet add package NetHacksPack.Integration.RabbitMQ.Handlers
 
 ### .NET NetHacksPack.Data.Persistence.Abstractions
 ---
-n/a
+This package contains the abstractions to handle Repository pattern
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/develop/src/NetHacksPack.Data.Persistence.Abstractions/README.md)
+
 ```
 dotnet add package NetHacksPack.Data.Persistence.Abstractions
 ```

@@ -68,6 +68,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Events.Helper"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Integration.RabbitMQ.Handlers", "src\NetHacksPack.Integration.RabbitMQ.Handlers\NetHacksPack.Integration.RabbitMQ.Handlers.csproj", "{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Database.Extension.EFCore.Logging", "src\NetHacksPack.Database.Extension.EFCore.Logging\NetHacksPack.Database.Extension.EFCore.Logging.csproj", "{C34A1428-E167-4C20-81F5-A823A09B3A75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{87524CAB-9F81-4BF7-8D45-B6925DC89DE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Database.Extension.EF", "src\NetHacksPack.Database.Extension.EF\NetHacksPack.Database.Extension.EF.csproj", "{6C3726F8-3795-41A1-8F53-CC3978687EAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Core.Extensions.Events", "src\NetHacksPack.Core.Extensions.Events\NetHacksPack.Core.Extensions.Events.csproj", "{742F670C-E88C-4632-8173-BDA349F16673}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Database.Events", "src\NetHacksPack.Database.Events\NetHacksPack.Database.Events.csproj", "{BF05E46D-014D-4D9C-8734-BFA17470630C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer", "src\NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer\NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer.csproj", "{0EE1834D-EC8A-452F-B076-6893DEC176E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql", "src\NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql\NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql.csproj", "{B2A7E318-6821-4573-848C-F9552D3D3828}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNetHacksPackLogging", "..\testes\TestNetHacksPackLogging\TestNetHacksPackLogging.csproj", "{E443A4F7-008C-495F-8455-CEDC534C7089}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -142,6 +158,34 @@ Global
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34A1428-E167-4C20-81F5-A823A09B3A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34A1428-E167-4C20-81F5-A823A09B3A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34A1428-E167-4C20-81F5-A823A09B3A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34A1428-E167-4C20-81F5-A823A09B3A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3726F8-3795-41A1-8F53-CC3978687EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3726F8-3795-41A1-8F53-CC3978687EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3726F8-3795-41A1-8F53-CC3978687EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3726F8-3795-41A1-8F53-CC3978687EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{742F670C-E88C-4632-8173-BDA349F16673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742F670C-E88C-4632-8173-BDA349F16673}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{742F670C-E88C-4632-8173-BDA349F16673}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742F670C-E88C-4632-8173-BDA349F16673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF05E46D-014D-4D9C-8734-BFA17470630C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF05E46D-014D-4D9C-8734-BFA17470630C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF05E46D-014D-4D9C-8734-BFA17470630C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF05E46D-014D-4D9C-8734-BFA17470630C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EE1834D-EC8A-452F-B076-6893DEC176E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE1834D-EC8A-452F-B076-6893DEC176E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EE1834D-EC8A-452F-B076-6893DEC176E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE1834D-EC8A-452F-B076-6893DEC176E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A7E318-6821-4573-848C-F9552D3D3828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A7E318-6821-4573-848C-F9552D3D3828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A7E318-6821-4573-848C-F9552D3D3828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A7E318-6821-4573-848C-F9552D3D3828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E443A4F7-008C-495F-8455-CEDC534C7089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E443A4F7-008C-495F-8455-CEDC534C7089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E443A4F7-008C-495F-8455-CEDC534C7089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E443A4F7-008C-495F-8455-CEDC534C7089}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +220,13 @@ Global
 		{AC111D9A-CABE-4DA1-BCD7-501C1B207944} = {FD1E8378-46F6-4355-BFF6-28D62F7827C2}
 		{26BB3E39-B0A8-43CC-8704-20BB595D4244} = {D69F1607-E425-4B8C-AE84-E9C703168955}
 		{607397FF-4A05-46D3-BEA4-A90D6A0BAD96} = {C3A77404-2212-4767-8AED-0DF05EAB17EA}
+		{C34A1428-E167-4C20-81F5-A823A09B3A75} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
+		{87524CAB-9F81-4BF7-8D45-B6925DC89DE1} = {D69F1607-E425-4B8C-AE84-E9C703168955}
+		{6C3726F8-3795-41A1-8F53-CC3978687EAF} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
+		{742F670C-E88C-4632-8173-BDA349F16673} = {D69F1607-E425-4B8C-AE84-E9C703168955}
+		{BF05E46D-014D-4D9C-8734-BFA17470630C} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
+		{0EE1834D-EC8A-452F-B076-6893DEC176E4} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
+		{B2A7E318-6821-4573-848C-F9552D3D3828} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DFFE86AD-D078-4C1A-85F2-4C053F66D6A7}

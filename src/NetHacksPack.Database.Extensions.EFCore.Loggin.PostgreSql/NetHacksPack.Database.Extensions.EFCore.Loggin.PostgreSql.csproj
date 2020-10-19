@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetHacksPack.Core\NetHacksPack.Core.csproj" />
+    <ProjectReference Include="..\NetHacksPack.Database.Extension.EFCore.Logging\NetHacksPack.Database.Extension.EFCore.Logging.csproj" />
   </ItemGroup>
 
 </Project>
