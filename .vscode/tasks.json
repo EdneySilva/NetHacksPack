@@ -1,0 +1,107 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dotnet: clean",
+      "command": "dotnet clean",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: build",
+      "command": "dotnet build",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      },
+      "dependsOn": ["dotnet: clean"]
+    },
+    {
+      "label": "dotnet: restore",
+      "command": "dotnet restore",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: test",
+      "command": "dotnet test",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: run",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/src/Templates/services/${input:sample_project}"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "new",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/src/Templates/services/${input:sample_project}"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "dotnet: watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/src/Templates/services/${input:sample_project}",
+        "run"
+      ],
+      "problemMatcher": "$msCompile",
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "sample_project",
+      "type": "pickString",
+      "options": ["Template.BackgroundHost"],
+      "default": "Template.BackgroundHost",
+      "description": "Select the project that you would like to execute"
+    }
+  ]
+}
