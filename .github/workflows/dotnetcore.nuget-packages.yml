@@ -90,3 +90,39 @@ jobs:
         run: dotnet pack -c Release ./src/NetHacksPack.Integration.RabbitMQ.Handlers
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Integration.RabbitMQ.Handlers/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Core.Extensions.Events --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Core.Extensions.Events
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Core.Extensions.Events/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Database.Events --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Database.Events
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Database.Events/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+        
+      - run: dotnet build ./src/NetHacksPack.Database.Extension.EF --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Database.Extension.EF
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Database.Extension.EF/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Database.Extension.EFCore.Logging --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Database.Extension.EFCore.Logging
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Database.Extension.EFCore.Logging/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer --configuration Release
+      - name: Create the package Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
