@@ -10,7 +10,9 @@ namespace NetHacksPack.Integration.Abstractions
 
         Task ConnectAsync(CancellationToken cancellationToken);
 
-        void Publish(Event @event);
+        void Publish<T>(T @event) where T : Event;
+
+        Task PublishAsync<T>(T @event) where T : Event;
 
         void Subscribe<TEventDesc, TEventHandler>()
             where TEventDesc : Event
