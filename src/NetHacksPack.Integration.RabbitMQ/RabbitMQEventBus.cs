@@ -49,9 +49,15 @@ namespace NetHacksPack.Integration.RabbitMQ
             return subscription.Handler(rabbitContext, rabbitContext.ReceivedMessage.ToEventMessage());
         }
 
-        public void Publish(Event @event)
+        public void Publish<T>(T @event) where T : Event
         {
             this.eventBusPublisher.Send(@event, this.cancellationToken);
+        }
+
+        public Task PublishAsync<T>(T @event) where T : Event
+        {
+            this.eventBusPublisher.Send(@event, this.cancellationToken);
+            return Task.CompletedTask;
         }
 
         public void Subscribe<TEventDesc, TEventHandler>()

@@ -78,11 +78,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Core.Extension
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Database.Events", "src\NetHacksPack.Database.Events\NetHacksPack.Database.Events.csproj", "{BF05E46D-014D-4D9C-8734-BFA17470630C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer", "src\NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer\NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer.csproj", "{0EE1834D-EC8A-452F-B076-6893DEC176E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer", "src\NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer\NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer.csproj", "{0EE1834D-EC8A-452F-B076-6893DEC176E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql", "src\NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql\NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql.csproj", "{B2A7E318-6821-4573-848C-F9552D3D3828}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql", "src\NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql\NetHacksPack.Database.Extensions.EFCore.Loggin.PostgreSql.csproj", "{B2A7E318-6821-4573-848C-F9552D3D3828}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNetHacksPackLogging", "..\testes\TestNetHacksPackLogging\TestNetHacksPackLogging.csproj", "{E443A4F7-008C-495F-8455-CEDC534C7089}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNetHacksPackLogging", "..\testes\TestNetHacksPackLogging\TestNetHacksPackLogging.csproj", "{E443A4F7-008C-495F-8455-CEDC534C7089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetHacksPack.Data.Linq.EF", "src\NetHacksPack.Data.Linq.EF\NetHacksPack.Data.Linq.EF.csproj", "{A26EC6A4-59C4-48A4-8BA3-E7397A10F5F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -186,6 +188,10 @@ Global
 		{E443A4F7-008C-495F-8455-CEDC534C7089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E443A4F7-008C-495F-8455-CEDC534C7089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E443A4F7-008C-495F-8455-CEDC534C7089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26EC6A4-59C4-48A4-8BA3-E7397A10F5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26EC6A4-59C4-48A4-8BA3-E7397A10F5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26EC6A4-59C4-48A4-8BA3-E7397A10F5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26EC6A4-59C4-48A4-8BA3-E7397A10F5F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -227,6 +233,7 @@ Global
 		{BF05E46D-014D-4D9C-8734-BFA17470630C} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
 		{0EE1834D-EC8A-452F-B076-6893DEC176E4} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
 		{B2A7E318-6821-4573-848C-F9552D3D3828} = {87524CAB-9F81-4BF7-8D45-B6925DC89DE1}
+		{A26EC6A4-59C4-48A4-8BA3-E7397A10F5F5} = {E9247C3F-C3E9-4178-A243-CBFEC765AA5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DFFE86AD-D078-4C1A-85F2-4C053F66D6A7}
