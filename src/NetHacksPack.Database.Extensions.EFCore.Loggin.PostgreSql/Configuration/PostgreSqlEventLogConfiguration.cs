@@ -7,9 +7,16 @@ namespace NetHacksPack.Database.Extensions.EFCore.Logging.PostgreSql.Configurati
 {
     internal class PostgreSqlEventLogConfiguration : EventsLogsConfiguration
     {
+        private readonly string tableName;
+
+        public PostgreSqlEventLogConfiguration(string tableName)
+        {
+            this.tableName = tableName;
+        }
+
         public override void Configure(EntityTypeBuilder<EventLog> builder)
         {
-            builder.ToTable("EventsLogs");
+            builder.ToTable(tableName);
 
             builder.HasKey(p => p.Id);
 
