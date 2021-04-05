@@ -1,14 +1,12 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using NetHacksPack.Database.Events;
-using NetHacksPack.Database.Extension.EF;
 using NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -42,12 +40,12 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
 
             foreach (var item in notification.Data.OriginalValues.SelectMany(k => k.Value.Select(s => new { Value = s, k.Key })))
             {
-                if (IsOnBlackList(notification.GetType().Name, item.Value.OriginalValues.EntityType.ShortName()))
+                if (IsOnBlackList(notification.GetType().Name, item.Value.Metadata.ShortName()))
                     continue;
                 var f = item.Value.Entry;
                 var primaryKey = item.Value.Metadata.FindPrimaryKey();
                 var primaryKeys = primaryKey.Properties.ToDictionary(p => p.Name, p => f.Property(p.Name).CurrentValue?.ToString());
-                var originalItems = item.Value.OriginalValues.Properties.ToDictionary(p => p.Name, p => item.Value.OriginalValues.GetValue<object>(p)?.ToString());
+                var originalItems = item.Value.OriginalValues;
                 var currentValues = item.Value.Entry.CurrentValues.Properties.ToDictionary(p => p.Name, p => f.Property(p.Name).OriginalValue?.ToString());
                 var log = new EventLog();
                 log.CreatedAt = DateTime.Now;
@@ -71,12 +69,12 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
             foreach (var item in notification.Data.OriginalValues.SelectMany(k => k.Value.Select(s => new { Value = s, k.Key })))
             {
 
-                if (IsOnBlackList(notification.GetType().Name, item.Value.OriginalValues.EntityType.ShortName()))
+                if (IsOnBlackList(notification.GetType().Name, item.Value.Metadata.ShortName()))
                     continue;
                 var f = item.Value.Entry;
                 var primaryKey = item.Value.Metadata.FindPrimaryKey();
                 var primaryKeys = primaryKey.Properties.ToDictionary(p => p.Name, p => f.Property(p.Name).CurrentValue?.ToString());
-                var originalItems = item.Value.OriginalValues.Properties.ToDictionary(p => p.Name, p => item.Value.OriginalValues.GetValue<object>(p)?.ToString());
+                var originalItems = item.Value.OriginalValues;
                 var currentValues = item.Value.Entry.CurrentValues.Properties.ToDictionary(p => p.Name, p => f.Property(p.Name).OriginalValue?.ToString());
                 var log = new EventLog();
                 log.CreatedAt = DateTime.Now;
@@ -94,12 +92,12 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
         {
             foreach (var item in notification.Data.OriginalValues.SelectMany(k => k.Value.Select(s => new { Value = s, k.Key })))
             {
-                if (IsOnBlackList(notification.GetType().Name, item.Value.OriginalValues.EntityType.ShortName()))
+                if (IsOnBlackList(notification.GetType().Name, item.Value.Metadata.ShortName()))
                     continue;
                 var f = item.Value.Entry;
                 var primaryKey = item.Value.Metadata.FindPrimaryKey();
                 var primaryKeys = primaryKey.Properties.ToDictionary(p => p.Name, p => f.Property(p.Name).CurrentValue?.ToString());
-                var originalItems = item.Value.OriginalValues.Properties.ToDictionary(p => p.Name, p => item.Value.OriginalValues.GetValue<object>(p)?.ToString());
+                var originalItems = item.Value.OriginalValues;
                 var currentValues = item.Value.Entry.CurrentValues.Properties.ToDictionary(p => p.Name, p => f.Property(p.Name).OriginalValue?.ToString());
                 var log = new EventLog();
                 log.CreatedAt = DateTime.Now;
