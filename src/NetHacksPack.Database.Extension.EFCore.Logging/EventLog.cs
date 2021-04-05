@@ -4,6 +4,8 @@ using System.Text;
 
 namespace NetHacksPack.Database.Extension.EFCore.Logging
 {
+    public delegate string AuditTableNameProvider();
+
     public class EventLog
     {
         public Guid Id { get; set; }

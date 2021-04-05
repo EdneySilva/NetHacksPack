@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using NetHacksPack.Core;
@@ -42,6 +43,26 @@ namespace NetHacksPack.Database.Extension.EF
             this.mediatorHandler?.SendCommand(new ApplyConfigurationsToContextCommand(modelBuilder));
             this.ConfigureModels(modelBuilder);
             base.OnModelCreating(modelBuilder);
+        }
+
+        public override EntityEntry<TEntity> Update<TEntity>(TEntity entity)
+        {
+            if (this.Entry(entity).State == EntityState.Detached)
+            {
+                this.Attach(entity);
+                this.ChangeTracker.DetectChanges();
+            }
+            return base.Update(entity);
+        }
+
+        public override EntityEntry Update(object entity)
+        {
+            if (this.Entry(entity).State == EntityState.Detached)
+            {
+                this.Attach(entity);
+                this.ChangeTracker.DetectChanges();
+            }
+            return base.Update(entity);
         }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

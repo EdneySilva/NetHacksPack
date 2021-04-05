@@ -10,9 +10,16 @@ namespace NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer.Configuratio
 {
     internal class SqlEventLogConfiguration : EventsLogsConfiguration
     {
+        private readonly string tableName;
+
+        public SqlEventLogConfiguration(string tableName)
+        {
+            this.tableName = tableName;
+        }
+
         public override void Configure(EntityTypeBuilder<EventLog> builder)
         {
-            builder.ToTable("EventsLogs");
+            builder.ToTable(tableName);
 
             builder.HasKey(p => p.Id);
 
@@ -34,10 +41,10 @@ namespace NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer.Configuratio
                 .HasColumnType("VARCHAR(50)");
             builder
                 .Property(p => p.DataKeysValues)
-                .HasColumnType("JSON");
+                .HasColumnType("NVARCHAR(MAX)");
             builder
                 .Property(p => p.OriginalValues)
-                .HasColumnType("JSON");
+                .HasColumnType("NVARCHAR(MAX)");
         }
     }
 }

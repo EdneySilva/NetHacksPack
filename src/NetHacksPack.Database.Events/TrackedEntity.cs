@@ -11,9 +11,9 @@ namespace NetHacksPack.Database.Events
         {
             this.EntityEntries = entityEntries;
             this.OriginalValues = entityEntries.GroupBy(b => b.OriginalValues.EntityType.GetTableName()).ToDictionary(
-                s => s.Key,
-                s => s.Select(item => new Tracker(item.Metadata, item, item.OriginalValues.Clone())).ToList().AsEnumerable()
-             );
+              s => s.Key,
+              s => s.Select(item => new Tracker(item.Metadata, item, item.OriginalValues.Properties.ToDictionary(p => p.Name, p => item.GetDatabaseValues()?.GetValue<object>(p)?.ToString()))).ToList().AsEnumerable()
+           );
         }
 
         public IEnumerable<EntityEntry> EntityEntries { get; }
