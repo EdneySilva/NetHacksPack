@@ -7,7 +7,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class EntityFrameworkExtensions
     {
-        public static IServiceCollection AddTransientUnityOfWork<TDbContext>(this IServiceCollection services)
+        public static IServiceCollection AddQueryableAsRepository<TDbContext>(this IServiceCollection services)
             where TDbContext : DbContext
         {
             return services
