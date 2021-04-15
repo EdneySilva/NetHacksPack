@@ -35,7 +35,7 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
             this.LogType = typeof(EventLog).Name;
         }
 
-        public async Task Handle(DataUpdatedEvent<TrackedEntity> notification, CancellationToken cancellationToken)
+        public Task Handle(DataUpdatedEvent<TrackedEntity> notification, CancellationToken cancellationToken)
         {
 
             foreach (var item in notification.Data.OriginalValues.SelectMany(k => k.Value.Select(s => new { Value = s, k.Key })))
@@ -60,11 +60,11 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
                         ).ToDictionary(s => s.Key, s => s.Value)
                 );
                 this.dbContext.Add(log);
-                await this.dbContext.SaveChangesAsync();
             }
+            return Task.CompletedTask;
         }
 
-        public async Task Handle(DataDeletedEvent<TrackedEntity> notification, CancellationToken cancellationToken)
+        public Task Handle(DataDeletedEvent<TrackedEntity> notification, CancellationToken cancellationToken)
         {
             foreach (var item in notification.Data.OriginalValues.SelectMany(k => k.Value.Select(s => new { Value = s, k.Key })))
             {
@@ -84,11 +84,11 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
                 log.EventType = notification.Type;
                 log.OriginalValues = JsonConvert.SerializeObject(originalItems);
                 this.dbContext.Add(log);
-                await this.dbContext.SaveChangesAsync();
             }
+            return Task.CompletedTask;
         }
 
-        public async Task Handle(DataAddedEvent<TrackedEntity> notification, CancellationToken cancellationToken)
+        public Task Handle(DataAddedEvent<TrackedEntity> notification, CancellationToken cancellationToken)
         {
             foreach (var item in notification.Data.OriginalValues.SelectMany(k => k.Value.Select(s => new { Value = s, k.Key })))
             {
@@ -107,8 +107,8 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging
                 log.EventType = notification.Type;
                 log.OriginalValues = JsonConvert.SerializeObject(originalItems);
                 this.dbContext.Add(log);
-                await this.dbContext.SaveChangesAsync();
             }
+            return Task.CompletedTask;
         }
 
         private bool IsOnBlackList(string type, string entityType)
