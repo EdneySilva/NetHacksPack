@@ -73,6 +73,7 @@ namespace NetHacksPack.Database.Extension.EF
             {
                 foreach (var evento in events)
                     Task.WaitAll(this.mediatorHandler?.PublishEvent(evento));
+                result = base.SaveChanges(acceptAllChangesOnSuccess);
             }
             return result;
         }
@@ -85,6 +86,7 @@ namespace NetHacksPack.Database.Extension.EF
             {
                 foreach (var evento in events)
                     Task.WaitAll(this.mediatorHandler?.PublishEvent(evento));
+                result = await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
             }
             return result;
         }
