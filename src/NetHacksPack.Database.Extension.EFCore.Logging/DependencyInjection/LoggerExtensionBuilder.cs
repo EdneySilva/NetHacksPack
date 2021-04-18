@@ -40,5 +40,16 @@ namespace NetHacksPack.Database.Extension.EFCore.Logging.DependencyInjection
                 .AddScoped<INotificationHandler<DataDeletedEvent<TrackedEntity>>, LogEventHandler>();
             return this;
         }
+
+        public IServiceCollection DisableLogs(Action<DisableLoggerExtensionBuilder> configure)
+        {
+            services.AddSingleton((serviceProvider) =>
+            {
+                var disabledLogger = new DisableLoggerExtensionBuilder();
+                configure(disabledLogger);
+                return disabledLogger.Build();
+            });
+            return services;
+        }
     }
 }
