@@ -9,16 +9,29 @@ namespace NetHacksPack.Core
     {
         public DateTime Timestamp { get; private set; }
 
-        //public ValidationResult ValidationResult { get; set; }
-
         protected Command()
         {
             Timestamp = DateTime.Now;
         }
 
-        public virtual bool EhValido()
+        public virtual bool IsValid()
         {
             throw new NotImplementedException();
+        }
+    }
+
+    public class Command<TResult> : Message, IRequest<TResult>
+    {
+        public DateTime Timestamp { get; private set; }
+
+        public Command()
+        {
+
+        }
+
+        public virtual bool IsValid()
+        {
+            return true;
         }
     }
 }

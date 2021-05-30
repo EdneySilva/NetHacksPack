@@ -1,10 +1,7 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace NetHacksPack.Core.Extensions.Events
+namespace NetHacksPack.Core
 {
     class MediatorHandler : IMediatorHandler
     {
@@ -18,11 +15,17 @@ namespace NetHacksPack.Core.Extensions.Events
         public async Task PublishEvent<TEvent>(TEvent @event) where TEvent : ObjectEvent
         {
             await mediator.Publish(@event);
+            
         }
 
         public async Task<bool> SendCommand<TCommand>(TCommand command) where TCommand : Command
         {
             return await mediator.Send(command);
+        }
+
+        public Task<TResult> SendCommand<TResult>(Command<TResult> command)
+        {
+            return mediator.Send(command);
         }
     }
 }
