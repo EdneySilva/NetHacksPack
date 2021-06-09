@@ -126,3 +126,9 @@ jobs:
         run: dotnet pack -c Release ./src/NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer
       - name: Publish the package to GPR
         run: dotnet nuget push ./src/NetHacksPack.Database.Extensions.EFCore.Logging.SqlServer/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+
+      - run: dotnet build ./src/NetHacksPack.Data.Linq.EF
+      - name: Create the package NetHacksPack.Data.Linq.EF Application
+        run: dotnet pack -c Release ./src/NetHacksPack.Data.Linq.EF
+      - name: Publish the package to GPR
+        run: dotnet nuget push ./src/NetHacksPack.Data.Linq.EF/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}}
