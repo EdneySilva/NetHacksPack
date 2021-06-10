@@ -26,6 +26,15 @@ dotnet add package NetHacksPack.Core
 | `NetHacksPack.Core` | [![NuGet](https://img.shields.io/nuget/v/NetHacksPack.Core.svg)](https://nuget.org/packages/NetHacksPack.Core) | [![Nuget](https://img.shields.io/nuget/dt/NetHacksPack.Core.svg)](https://nuget.org/packages/NetHacksPack.Core.svg) |
 
 
+### .NET NetHacksPack.Data.Linq.EF
+---
+This package contains the implementations that enables the software using IQueryable<T> interface straightforwardly as a readonly repository, injecting it on your services, controllers or handlers without a whole infrastructure layer's implementation.
+
+See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/master/src/NetHacksPack.Data.Linq.EF/docs/readme.md)                                
+  
+```ps
+dotnet add package NetHacksPack.Data.Linq.EF
+```  
 ### .NET NetHacksPack.Hosting.Abstractions
 ---
 This package contains definitions for abstractions that can be usefull to create background hosts (also know as windows|linux - services).
