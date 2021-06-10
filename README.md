@@ -31,6 +31,9 @@ dotnet add package NetHacksPack.Core
 This package contains the implementations that enables the software using IQueryable<T> interface straightforwardly as a readonly repository, injecting it on your services, controllers or handlers without a whole infrastructure layer's implementation.
 
 See the [official documentation](https://github.com/EdneySilva/NetHacksPack/blob/master/src/NetHacksPack.Data.Linq.EF/docs/readme.md)                                
+| Package |  Version | Popularity |
+| ------- | ----- | ----- |
+| `NetHacksPack.Core` | [![NuGet](https://img.shields.io/nuget/v/NetHacksPack.Core.svg)](https://nuget.org/packages/NetHacksPack.Data.Linq.EF) | [![Nuget](https://img.shields.io/nuget/dt/NetHacksPack.Data.Linq.EF.svg)](https://nuget.org/packages/NetHacksPack.Data.Linq.EF.svg) |
   
 ```ps
 dotnet add package NetHacksPack.Data.Linq.EF
