@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Description>This project implements a basic way to send a notification using a SmtpMail, adding on the notification client pipeline the provider resposible to do that</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
+    <PackageLicenseFile>license</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\license" Link="license">
+      <PackagePath></PackagePath>
+      <Pack>True</Pack>
+    </None>
+    <None Include="..\..\license">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetHacksPack.Notifications.Abstractions\NetHacksPack.Notifications.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
