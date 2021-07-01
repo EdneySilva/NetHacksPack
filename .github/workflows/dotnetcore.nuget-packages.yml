@@ -138,3 +138,15 @@ jobs:
         run: dotnet pack -c Release ./src/NetHacksPack.Integration.Azure
       - name: Publish the package to Nuget Package Manager
         run: dotnet nuget push ./src/NetHacksPack.Integration.Azure/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+        
+      - run: dotnet build ./src/NetHacksPack.Notifications.Abstractions
+      - name: Create the package NetHacksPack.Notifications.Abstractions
+        run: dotnet pack -c Release ./src/NetHacksPack.Notifications.Abstractions
+      - name: Publish the package NetHacksPack.Notifications.Abstractions to Nuget Package Manager
+        run: dotnet nuget push ./src/NetHacksPack.Notifications.Abstractions/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
+        
+      - run: dotnet build ./src/NetHacksPack.Notifications.Extensions.SmtpMail
+      - name: Create the package NetHacksPack.Notifications.Extensions.SmtpMail
+        run: dotnet pack -c Release ./src/NetHacksPack.Notifications.Extensions.SmtpMail
+      - name: Publish the package NetHacksPack.Notifications.Extensions.SmtpMail to Nuget Package Manager
+        run: dotnet nuget push ./src/NetHacksPack.Notifications.Extensions.SmtpMail/bin/Release/*.nupkg -k ${{secrets.NUGET_TOKEN}} --skip-duplicate
