@@ -9,10 +9,10 @@ namespace NetHacksPack.Core.Extensions.Events.DependencyInjection
 {
     public static class DependencyInjectionExtensions
     {
-        public static IServiceCollection AddObjectEventsAndMessagesHandler(this IServiceCollection services, Type classInAssembly)
+        public static IServiceCollection AddObjectEventsAndMessagesHandler(this IServiceCollection services)
         {
             services.AddScoped<IMediatorHandler, MediatorHandler>();
-            services.AddMediatR(classInAssembly);
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             return services;
         }
     }
