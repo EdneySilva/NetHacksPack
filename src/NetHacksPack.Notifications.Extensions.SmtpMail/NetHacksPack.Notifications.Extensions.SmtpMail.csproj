@@ -6,6 +6,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/EdneySilva/NetHacksPack</PackageProjectUrl>
     <PackageLicenseFile>license</PackageLicenseFile>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.0.1</Version>
+    <PackageReleaseNotes>Fixed tag is html</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
