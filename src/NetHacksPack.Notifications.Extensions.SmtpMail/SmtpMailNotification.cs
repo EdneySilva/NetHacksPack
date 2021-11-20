@@ -60,11 +60,11 @@ namespace NetHacksPack.Notifications.Extensions.SmtpMail
         {
             get
             {
-                return Headers[Constants.MAIL_CONTENT].Equals("true");
+                return Headers[Constants.MAIL_ISHTML].Equals("true");
             }
             set
             {
-                Headers[Constants.MAIL_CONTENT] = value ? "true" : "false";
+                Headers[Constants.MAIL_ISHTML] = value ? "true" : "false";
             }
         }
 
